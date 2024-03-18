@@ -25,6 +25,7 @@ func (q *Queue) Enqueue(item any) {
 	q.Length++
 	q.tail.next = node
 	q.tail = node
+
 }
 
 func (q *Queue) Deque() any {

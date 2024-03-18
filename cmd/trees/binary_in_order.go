@@ -5,9 +5,9 @@ func walkIn(node *BinaryNode, path *[]any) {
 		return
 	}
 
-	walkIn(node.left, path)
-	*path = append(*path, node.value)
-	walkIn(node.right, path)
+	walkIn(node.Left, path)
+	*path = append(*path, node.Value)
+	walkIn(node.Right, path)
 }
 
 func BinaryInOrderTraverse(head *BinaryNode) []any {

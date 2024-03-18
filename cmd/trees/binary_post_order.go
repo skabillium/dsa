@@ -5,9 +5,9 @@ func walkPost(node *BinaryNode, path *[]any) {
 		return
 	}
 
-	walkPost(node.left, path)
-	walkPost(node.right, path)
-	*path = append(*path, node.value)
+	walkPost(node.Left, path)
+	walkPost(node.Right, path)
+	*path = append(*path, node.Value)
 }
 
 func BinaryPostOrderTraverse(head *BinaryNode) []any {

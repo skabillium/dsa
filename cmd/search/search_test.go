@@ -3,6 +3,8 @@ package search
 import (
 	"math/rand"
 	"testing"
+
+	"skabillium.io/kata-go/cmd/trees"
 )
 
 func TestLinearSearch(t *testing.T) {
@@ -68,5 +70,17 @@ func TestTwoCrystalBalls(t *testing.T) {
 	res = TwoCrystalBalls(make([]bool, 800))
 	if res != -1 {
 		t.Errorf("Expected -1, got %d", res)
+	}
+}
+
+func TestBinaryBfs(t *testing.T) {
+	if !BinaryBfs(*trees.ExampleBinaryTree, 45) {
+		t.Error("Expected BinaryBfs(45) to return true")
+	}
+	if !BinaryBfs(*trees.ExampleBinaryTree, 7) {
+		t.Error("Expected BinaryBfs(7) to return true")
+	}
+	if BinaryBfs(*trees.ExampleBinaryTree, 70) {
+		t.Error("Expected BinaryBfs(70) to return false")
 	}
 }

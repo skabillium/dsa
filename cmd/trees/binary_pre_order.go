@@ -5,9 +5,9 @@ func walkPre(node *BinaryNode, path *[]any) {
 		return
 	}
 
-	*path = append(*path, node.value)
-	walkPre(node.left, path)
-	walkPre(node.right, path)
+	*path = append(*path, node.Value)
+	walkPre(node.Left, path)
+	walkPre(node.Right, path)
 }
 
 func BinaryPreOrderTraverse(head *BinaryNode) []any {
