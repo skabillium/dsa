@@ -64,3 +64,12 @@ func TestBinaryPostOrder(t *testing.T) {
 		t.Error("Expected:", expected, "Received:", path)
 	}
 }
+
+func TestBinaryCompare(t *testing.T) {
+	if !CompareBinaryTrees(ExampleBinaryTree, ExampleBinaryTree) {
+		t.Error("Expected CompareBinaryTrees(ExampleBinaryTree, ExampleBinaryTree) to return true")
+	}
+	if CompareBinaryTrees(ExampleBinaryTree, ExampleBinaryTree2) {
+		t.Error("Expected CompareBinaryTrees(ExampleBinaryTree, ExampleBinaryTree2) to return false")
+	}
+}
