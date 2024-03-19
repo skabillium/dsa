@@ -84,3 +84,15 @@ func TestBinaryBfs(t *testing.T) {
 		t.Error("Expected BinaryBfs(70) to return false")
 	}
 }
+
+func TestBinarySearchTreeDfs(t *testing.T) {
+	if !BinarySearchTreeDfs(trees.ExampleBinaryTree, 45) {
+		t.Error("Expected BinaryBfs(45) to return true")
+	}
+	if !BinarySearchTreeDfs(trees.ExampleBinaryTree, 7) {
+		t.Error("Expected BinaryBfs(7) to return true")
+	}
+	if BinarySearchTreeDfs(trees.ExampleBinaryTree, 70) {
+		t.Error("Expected BinaryBfs(70) to return false")
+	}
+}
