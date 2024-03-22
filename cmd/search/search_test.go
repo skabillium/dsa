@@ -2,8 +2,10 @@ package search
 
 import (
 	"math/rand"
+	"reflect"
 	"testing"
 
+	"skabillium.io/kata-go/cmd/graphs"
 	"skabillium.io/kata-go/cmd/trees"
 )
 
@@ -94,5 +96,20 @@ func TestBinarySearchTreeDfs(t *testing.T) {
 	}
 	if BinarySearchTreeDfs(trees.ExampleBinaryTree, 70) {
 		t.Error("Expected BinaryBfs(70) to return false")
+	}
+}
+
+func TestBfsGraphMatrix(t *testing.T) {
+	expected := []int{
+		0,
+		1,
+		4,
+		5,
+		6,
+	}
+	res := BfsGraphMatrix(graphs.Matrix2, 0, 6)
+
+	if !reflect.DeepEqual(res, expected) {
+		t.Error("Expected BfsGraphMatrix(graphs.Matrix2, 0, 6) to return", expected, "got", res)
 	}
 }
