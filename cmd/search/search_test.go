@@ -113,3 +113,22 @@ func TestBfsGraphMatrix(t *testing.T) {
 		t.Error("Expected BfsGraphMatrix(graphs.Matrix2, 0, 6) to return", expected, "got", res)
 	}
 }
+
+func TestDfsGraphList(t *testing.T) {
+	expected := []int{
+		0,
+		1,
+		4,
+		5,
+		6,
+	}
+	res := DfsGraphList(graphs.List2, 0, 6)
+	if !reflect.DeepEqual(res, expected) {
+		t.Error("Expected DfsGraphList(graphs.List2, 0, 6) to return", expected, "got", res)
+	}
+
+	res = DfsGraphList(graphs.List2, 6, 0)
+	if !reflect.DeepEqual(res, []int{}) {
+		t.Error("Expected DfsGraphList(graphs.List2, 6, 0) to return", []int{}, "got", res)
+	}
+}

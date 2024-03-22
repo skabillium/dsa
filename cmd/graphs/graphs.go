@@ -2,6 +2,95 @@ package graphs
 
 type WeightedAdjacencyMatrix = [][]int
 
+type CompleteGraphEdge struct {
+	From   int
+	To     int
+	Weight int
+}
+
+type GraphEdge struct {
+	To     int
+	Weight int
+}
+
+type WeightedAdjacencyList = [][]GraphEdge
+
+//	  (1) --- (4) ---- (5)
+//	/  |       |       /|
+//
+// (0)   | ------|------- |
+//
+//	\  |/      |        |
+//	  (2) --- (3) ---- (6)
+var List1 = WeightedAdjacencyList{
+	{
+		{To: 1, Weight: 3},
+		{To: 2, Weight: 1},
+	},
+	{
+		{To: 0, Weight: 3},
+		{To: 2, Weight: 4},
+		{To: 4, Weight: 1},
+	},
+	{
+		{To: 1, Weight: 4},
+		{To: 3, Weight: 7},
+		{To: 0, Weight: 1},
+	},
+	{
+		{To: 2, Weight: 7},
+		{To: 4, Weight: 5},
+		{To: 6, Weight: 1},
+	},
+	{
+		{To: 1, Weight: 1},
+		{To: 3, Weight: 5},
+		{To: 5, Weight: 2},
+	},
+	{
+		{To: 6, Weight: 1},
+		{To: 4, Weight: 2},
+		{To: 2, Weight: 18},
+	},
+	{
+		{To: 3, Weight: 1},
+		{To: 5, Weight: 1},
+	},
+}
+
+//	 >(1)<--->(4) ---->(5)
+//	/          |       /|
+//
+// (0)     ------|------- |
+//
+//	\   v      v        v
+//	 >(2) --> (3) <----(6)
+var List2 = WeightedAdjacencyList{
+	{
+		{To: 1, Weight: 3},
+		{To: 2, Weight: 1},
+	},
+	{
+		{To: 4, Weight: 1},
+	},
+	{
+		{To: 3, Weight: 7},
+	},
+	{},
+	{
+		{To: 1, Weight: 1},
+		{To: 3, Weight: 5},
+		{To: 5, Weight: 2},
+	},
+	{
+		{To: 2, Weight: 18},
+		{To: 6, Weight: 1},
+	},
+	{
+		{To: 3, Weight: 1},
+	},
+}
+
 //	 >(1)<--->(4) ---->(5)
 //	/          |       /|
 //
