@@ -1,9 +1,13 @@
-package structures
+package structures_test
 
-import "testing"
+import (
+	"testing"
+
+	"skabillium.io/kata-go/cmd/structures"
+)
 
 func TestStack(t *testing.T) {
-	s := NewStack()
+	s := structures.NewStack()
 
 	s.Push(5)
 	s.Push(7)

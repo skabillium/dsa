@@ -1,11 +1,13 @@
-package structures
+package structures_test
 
 import (
 	"testing"
+
+	"skabillium.io/kata-go/cmd/structures"
 )
 
 func TestArrayList(t *testing.T) {
-	list := NewArrayList(16)
+	list := structures.NewArrayList(16)
 
 	list.Append(5)
 	list.Append(7)

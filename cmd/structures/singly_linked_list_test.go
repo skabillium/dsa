@@ -1,9 +1,13 @@
-package structures
+package structures_test
 
-import "testing"
+import (
+	"testing"
+
+	"skabillium.io/kata-go/cmd/structures"
+)
 
 func TestSinglyLinkedList(t *testing.T) {
-	list := NewSinglyLinkedList()
+	list := structures.NewSinglyLinkedList()
 
 	list.Append(5)
 	list.Append(7)

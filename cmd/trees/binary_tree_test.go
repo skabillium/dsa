@@ -1,12 +1,14 @@
-package trees
+package trees_test
 
 import (
 	"reflect"
 	"testing"
+
+	"skabillium.io/kata-go/cmd/trees"
 )
 
 func TestBinaryPreOrder(t *testing.T) {
-	path := BinaryPreOrderTraverse(ExampleBinaryTree)
+	path := trees.BinaryPreOrderTraverse(trees.ExampleBinaryTree)
 	expected := []any{
 		20,
 		10,
@@ -26,7 +28,7 @@ func TestBinaryPreOrder(t *testing.T) {
 }
 
 func TestBinaryInOrder(t *testing.T) {
-	path := BinaryInOrderTraverse(ExampleBinaryTree)
+	path := trees.BinaryInOrderTraverse(trees.ExampleBinaryTree)
 	expected := []any{
 		5,
 		7,
@@ -46,7 +48,7 @@ func TestBinaryInOrder(t *testing.T) {
 }
 
 func TestBinaryPostOrder(t *testing.T) {
-	path := BinaryPostOrderTraverse(ExampleBinaryTree)
+	path := trees.BinaryPostOrderTraverse(trees.ExampleBinaryTree)
 	expected := []any{
 		7,
 		5,
@@ -66,10 +68,10 @@ func TestBinaryPostOrder(t *testing.T) {
 }
 
 func TestBinaryCompare(t *testing.T) {
-	if !CompareBinaryTrees(ExampleBinaryTree, ExampleBinaryTree) {
+	if !trees.CompareBinaryTrees(trees.ExampleBinaryTree, trees.ExampleBinaryTree) {
 		t.Error("Expected CompareBinaryTrees(ExampleBinaryTree, ExampleBinaryTree) to return true")
 	}
-	if CompareBinaryTrees(ExampleBinaryTree, ExampleBinaryTree2) {
+	if trees.CompareBinaryTrees(trees.ExampleBinaryTree, trees.ExampleBinaryTree2) {
 		t.Error("Expected CompareBinaryTrees(ExampleBinaryTree, ExampleBinaryTree2) to return false")
 	}
 }

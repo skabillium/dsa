@@ -1,9 +1,13 @@
-package structures
+package structures_test
 
-import "testing"
+import (
+	"testing"
+
+	"skabillium.io/kata-go/cmd/structures"
+)
 
 func TestRingBuffer(t *testing.T) {
-	buffer := NewRingBuffer(8)
+	buffer := structures.NewRingBuffer(8)
 
 	buffer.Enqueue(5)
 	if buffer.Deque() != 5 {

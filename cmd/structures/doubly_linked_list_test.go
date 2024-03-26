@@ -1,9 +1,13 @@
-package structures
+package structures_test
 
-import "testing"
+import (
+	"testing"
+
+	"skabillium.io/kata-go/cmd/structures"
+)
 
 func TestDoublyLinkedList(t *testing.T) {
-	list := NewDoublyLinkedList()
+	list := structures.NewDoublyLinkedList()
 
 	list.Append(5)
 	list.Append(7)

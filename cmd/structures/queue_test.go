@@ -1,9 +1,13 @@
-package structures
+package structures_test
 
-import "testing"
+import (
+	"testing"
+
+	"skabillium.io/kata-go/cmd/structures"
+)
 
 func TestQueue(t *testing.T) {
-	q := NewQueue()
+	q := structures.NewQueue()
 
 	q.Enqueue(5)
 	q.Enqueue(7)
